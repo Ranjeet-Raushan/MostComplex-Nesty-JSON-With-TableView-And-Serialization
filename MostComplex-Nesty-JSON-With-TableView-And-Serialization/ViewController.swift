@@ -16,7 +16,7 @@ class ViewController: UIViewController {
             do {
                 guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? JSON else { return }
                 let itemResponse = ItemResponse(json: json)
-                guard let batters = itemResponse?.items.first?.batters.batters else { return }
+                guard let batters = itemResponse?.itemsElement.first?.batters.batters else { return }
                 print(batters)
                 self.batters = batters
                 
