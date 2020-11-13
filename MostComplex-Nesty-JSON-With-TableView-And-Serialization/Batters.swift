@@ -11,7 +11,7 @@ struct Batters {
     
     init?(json: JSON) {
         guard let batterJSON = json["batter"] as? [JSON] else { return nil }
-        let batters = batterJSON.map({ Batter(json: $0)! })
-        self.batters = batters
+        let battersObject = batterJSON.map({ Batter(json: $0)! })
+        self.batters = battersObject
     }
 }
